@@ -1,9 +1,10 @@
+import { password, user, host, name } from './../lib/variables';
 import { Pool } from 'pg';
 
 export const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    password: 'aaaaaa1',
-    database: 'shopdb',
-    port: 5432
+    user: user,
+    host: host,
+    password: password,
+    database: name,
+    port: 5432,
 });
