@@ -1,12 +1,14 @@
 FROM node:14 as base
-EXPOSE 3000 9229
 
-WORKDIR /home/app
+WORKDIR /app
 
-COPY package.json /home/app/
-COPY package-lock.json /home/app/
+COPY ./package.json .
+COPY ./package-lock.json .
 
+RUN npm install
 
-COPY . /home/app
+COPY . .
 
-RUN npm run build
+EXPOSE 3000
+
+CMD npm start
